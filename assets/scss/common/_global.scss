@@ -1,0 +1,103 @@
+// -------------------------------------------------------------
+// Global styles
+// -------------------------------------------------------------
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 50%;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+	@include bp(tablet) {
+		font-size: 57.25%;
+	}
+
+	@include bp(desktop) {
+		font-size: 62.5%;
+	}
+}
+
+body {
+	line-height: $baseline;
+	font-size: $global-font-size;
+	font-family: $global-font-family;
+	letter-spacing: 0.02em;
+	font-weight: $global-weight-normal;
+	overflow-x: hidden;
+
+	&.jobs {
+		background: #f0f2f5;
+	}
+
+	&.mobile-menu-active {
+		overflow: hidden;
+		max-height: 100vh;
+	}
+
+    &.mobile-menu-active .offcanvas {
+		opacity: 1;
+		visibility: visible;
+		transition: all 60m0s 0s $cubic
+	}
+}
+
+main {
+	.privacy & {
+		padding-top: 5em;
+	}
+}
+
+.offcanvas {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: $primary;
+	display: flex;
+	max-height: 100vh;
+	z-index: 100;
+	transition: all 600ms 0s $cubic;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.container {
+	width:100%;
+	max-width:$global-width;
+	margin:0 auto;
+
+	&--wide {
+		max-width:$global-width*1.2;
+		margin:0 auto;
+	}
+}
+
+.overlay {
+	display: none;
+
+	@include bp(tablet) {
+		position: absolute;
+		background: rgba($primary, .7);
+		top: 0; right: 0; bottom: 0; left: 0;
+		width: 100%; height: 100%;
+		z-index: 0;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+.no-mobile {
+	display: none;
+
+	@include bp(tablet) {
+		display: block;
+	}
+}

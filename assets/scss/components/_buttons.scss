@@ -1,0 +1,44 @@
+// Custom Button Styles
+
+.btn {
+    display: inline-block;
+    margin: 2.5em auto;
+    background: $secondary;
+    color: $light;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    font-weight: 700;
+    padding: .425em 1.25em;
+    font-family: $header-font-family;
+    text-transform: uppercase;
+    border: none;
+    @include rounded;
+    box-shadow: 0 2px 20px rgba($dark, .1);
+    transition: 600ms $cubic;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include bp(tablet) {
+        margin: .625em 1.25em .625em 0;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 2px 40px rgba($dark, .2);
+        color: $light;
+    }
+
+    &--blue {
+        background: $primary;
+    }
+
+    &--white {
+        background: $light;
+        color: #63ACF8;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

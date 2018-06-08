@@ -1,0 +1,171 @@
+// Grid Styles
+.container {
+    width:100%;
+    max-width:$global-width;
+    margin:0 auto;
+}
+
+.container--wide {
+    max-width:$global-width*1.2;
+    margin:0 auto;
+}
+
+.container--narrow {
+    max-width:$global-width/1.2;
+    margin: 0 auto;
+}
+
+.container--blog {
+    max-width:$global-width/1.5;
+    margin: 0 auto;
+}
+
+.row {
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+
+    &--collapse > .column {
+        padding-left:0!important;
+        padding-right:0!important;
+    }
+
+    &--nowrap {
+        flex-wrap:nowrap;
+    }
+
+    // handle horizontal alignment
+
+    &--center {
+        justify-content:center;
+    }
+
+    &--justified {
+        justify-content:space-between;
+    }
+
+    &--spaced {
+        justify-content:space-around;
+    }
+
+    &--end {
+        justify-content:flex-end;
+    }
+
+    // handle vertical alignment
+
+    &--middle {
+        align-items:center;
+    }
+
+    &--bottom {
+        align-items:flex-end;
+    }
+
+    &--top {
+        align-items:flex-start;
+    }
+
+}
+
+ul.row {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.column {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    margin:0;
+    min-width: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis:auto;
+    width: 100%;
+}
+
+
+@for $i from 1 through 12 {
+
+    .column-m-#{$i} {
+        flex-basis: 100% / 12 * $i - 2%;
+        max-width: 100% / 12 * $i - 2%;
+    } 
+
+    .column-m-#{$i}-nest {
+        flex-basis: 100% / 12 * $i;
+        max-width: 100% / 12 * $i;	
+    }
+
+    .column-m-order-#{$i} {
+        order:#{$i};
+    }
+
+}
+
+@include bp(tablet) {
+
+    @for $i from 1 through 12 {
+
+        .column-t-#{$i} {
+            flex-basis: 100% / 12 * $i - 2%;
+            max-width: 100% / 12 * $i - 2%;
+        } 
+
+        .column-t-#{$i}-nest {
+            flex-basis: 100% / 12 * $i;
+            max-width: 100% / 12 * $i;
+        } 
+
+        .column-t-order-#{$i} {
+            order:#{$i};
+        }	
+
+    }
+
+}
+
+@include bp(phablet) {
+
+    @for $i from 1 through 12 {
+
+        .column-p-#{$i} {
+            flex-basis: 100% / 12 * $i - 2%;
+            max-width: 100% / 12 * $i - 2%;
+        } 
+
+        .column-p-#{$i}-nest {
+            flex-basis: 100% / 12 * $i;
+            max-width: 100% / 12 * $i;
+        } 
+
+        .column-p-order-#{$i} {
+            order:#{$i};
+        }	
+
+    }
+
+}
+
+@include bp(desktop) {
+
+    @for $i from 1 through 12 {
+
+        .column-d-#{$i} {
+            flex-basis: 100% / 12 * $i - 2%;
+            max-width: 100% / 12 * $i - 2%;
+        } 
+
+        .column-d-#{$i}-nest {
+            flex-basis: 100% / 12 * $i;
+            max-width: 100% / 12 * $i;
+        } 
+
+        .column-d-order-#{$i} {			
+            order:#{$i};
+        }		
+
+    }
+    
+}

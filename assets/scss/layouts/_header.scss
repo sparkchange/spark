@@ -1,0 +1,41 @@
+header[role="banner"] {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.25em;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 999;
+
+    .jobs &, .privacy & {
+        position: relative;
+    }
+
+    @include bp(desktop) {
+        padding: 1.25em 2.5em;
+    }
+
+    .sticky & {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: $primary;
+        @include animate(1s, 0, slideInDown);
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img {
+        @include animate(1s, 300ms, fadeInDown);
+    }
+
+    nav {
+        @include animate(1s, 600ms, fadeInDown);
+    }
+}

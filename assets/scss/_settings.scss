@@ -1,0 +1,88 @@
+// Global settings
+$global-width:1120px;
+$global-font-family: 'AvenirNextLTW01-Regular', sans-serif;
+$global-font-family-bold: 'Avenir Next LT W01 Bold', sans-seif;
+$global-font-size: 1.6rem;
+$text-color:#9a9a9a;
+$global-margin: 2rem;
+$global-padding: 2rem;
+$global-left: 1rem;
+$global-weight-normal: 300;
+$global-weight-bold: 700;
+$image-path: '../../assets/images/';
+
+// Colour Scheme
+$primary: #2AC2FC;
+$secondary: #30ca7e;
+$light-grey: #f6f9fc;
+$medium-grey: #eaeaea;
+$dark-grey: #cccccc;
+$dark: #000000;
+$light: #ffffff;
+
+// Typography settings
+$baseline: 1.5;
+$scale: 1.333;
+
+// Set our base h1 font size then use the golden ratio to calculate the rest
+$h5: calc(1em / #{$scale});
+$h4: $global-font-size;
+$h3: calc(1em * #{$scale});
+$h2: calc(#{$h3} * #{$scale});
+$h1: calc(#{$h2} * #{$scale});
+
+$header-font-family: 'AvenirNextLTW01-Regular', sans-serif;
+$header-line-height:1.4;
+$header-bottom-margin:rem-calc(30);
+$paragraph-line-height:1.6;
+$paragraph-margin-bottom:1.2rem;
+$list-lineheight: $paragraph-line-height;
+$list-margin-bottom: $paragraph-margin-bottom;
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;
+$defnlist-margin-bottom: 1rem;
+$defnlist-term-weight: $global-weight-bold;
+$defnlist-term-margin-bottom: 0.3rem;
+$blockquote-color: $dark-grey;
+$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: 1px solid $medium-grey;
+$cite-font-size: rem-calc(13);
+$cite-color: $dark-grey;
+$cite-pseudo-content: '\2014 \0020';
+$abbr-underline: 1px dotted $dark;
+
+// inputs
+$input-height:60px;
+$input-border-color:$light-grey;
+$input-focus-color:$primary;
+$input-focus-border-color:$primary;
+
+// tables
+$table-striped: even;
+$table-striped-background: $light-grey;
+$table-header-background: #eeeeee;
+$table-header-padding: rem-calc(10 12 10 12);
+$table-header-weight: $global-weight-bold;
+$table-body-background: #ffffff;
+$table-body-padding: rem-calc(10 12 10 12);
+$table-body-weight: $global-weight-normal;
+$table-footer-background: #eeeeee;
+$table-footer-padding: rem-calc(10 12 10 12);
+$table-footer-weight: $global-weight-normal;
+
+// Grid
+$breakpoints: (
+  'mobile': ( max-width: 640px ),
+  'tablet' : ( min-width: 800px ),
+  'phablet' :  ( min-width: 960px ),
+  'desktop' : ( min-width: 1200px )
+);
+
+// We use these to make sure border radius matches unless we want it different.
+$global-radius: 4px;
+$global-rounded: 1000px;
+
+// Animations
+$cubic: cubic-bezier(0.645, 0.045, 0.355, 1);

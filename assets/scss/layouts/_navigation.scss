@@ -1,0 +1,151 @@
+nav {
+	display: none;
+
+	@include bp(desktop) {
+		display: block;
+		@include animate(1s, 600ms, fadeInDown);
+	}
+
+	// Top Level
+
+	a {
+		color: $light;
+		text-decoration: none;
+		margin-right: 2.5em;
+		font-family: $header-font-family;
+		font-size: 1.6rem;
+		transition: .3s ease-in-out;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.jobs &, .privacy & {
+			color: #8394a6;
+		}
+
+		.sticky & {
+			color: $light;
+		}
+
+		&:hover {
+			text-decoration: underline;
+			transition: .3s ease-in-out;
+		}
+	}
+}
+
+nav.nav-mobile {
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	z-index: 100;
+
+	@include bp(tablet) {
+		display: none;
+	}
+
+	// Top Level
+
+	@for $i from 1 through 10 {
+		&:nth-child(#{$i}) a { 
+			.mobile-menu-active & {
+				animation-delay: (0.1s * $i); 
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: .325em;
+		width: 100%;
+		height: 100%;
+		color: $light;
+		font-size: 3.2rem;
+		font-weight: 300;
+		text-align: left;
+		text-decoration: none;
+
+		.mobile-menu-active & {
+			@include animate(1s, 1s, fadeInDown);
+		}
+
+		&.btn {
+			margin: 0;
+			background: none;
+			font-size: 3.2rem;
+			box-shadow: none;
+			text-transform: none;
+		}
+	}
+}
+
+.mobile-trigger {
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 26px;
+	top: 1.25em;
+	right: 1.25em;
+	cursor: pointer;
+	transition: 600ms $cubic;
+
+	@include bp(desktop) {
+		display: none;
+	}
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	span {
+
+		&, &::before, &::after {
+			transition: 300ms background $cubic, 300ms top $cubic 200ms, 200ms transform $cubic;
+			position: absolute;
+			background: $light;
+			margin: auto;
+			width: 100%;
+			height: 3px;
+			border-radius:25%;
+			content: '';
+			top: 50%;
+			left: 0;
+		}
+
+		&::before {
+			top: -8px;
+		}
+
+		&::after {
+			top: 8px;
+		}
+
+		&::before,
+		&::after {
+			transform: rotate(0deg);
+		}
+
+		&.mobile-menu-active {
+			background: 0;
+
+			&::before {
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				transform: rotate(-45deg);
+				width: 100%;
+			}
+
+			&::before, &::after {
+				top: 0;
+			}
+
+			&, &::before, &::after {
+				transition: 300ms background $cubic 200ms, 300ms top $cubic, 300ms transform $cubic 300ms;
+			}
+		}
+	}
+}
